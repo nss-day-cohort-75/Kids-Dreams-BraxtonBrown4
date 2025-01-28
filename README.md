@@ -35,10 +35,21 @@ Make sure your Developer Tools are open at all times while working on this proje
 Before you click the "Complete Assessment" button on the Learning Platform, add your answers below each question and make a commit.
 
 1. When a child is clicked on in the browser, which module contains the code that will execute on that event happening? Can you explain the algorithm of that logic?
-   > Your answer here
+   > Your answer here // 
+   
+   Inside the Kids.js module, a document.addEventListener listens for the specified 'click' event. When a click happens anywhere on screen it executes the arrow function with an argument of onClick. The function retrieves the data stored in the selected ordered list by using onClick.target.dataset and stores it in a variable called clickedData. It then checks using a if statement if the clickedData is a child by checking if clickedData.type is strictly equal to the string 'child', and if clickedData.type is strictly equal to 'child' it executes a window alert with the template literal `${clickedData.name} wish is ${clickedData.wish}`.
+
 2. In the **Pairings** module, why must the `findCelebrityMatch()` function be invoked inside the `for..of` loop that iterates the kids array?
-   > Your answer here
+   > Your answer here //
+   
+    The `findCelebrityMatch()` accepts only one child as a parameter and returns a single celebrity. To match each child with their celebrity, you must iterate the function with a array of the children.
+
 3. In the **CelebrityList** module, can you describe how the name of the sport that the celebrity plays can be displayed in the window alert text?
-   > Your answer here
+   > Your answer here //
+   
+   The name of the celebrities sport is stored in a data attribute named data-sport, the data attributes are then retrieved and stored in the clickedData variable using onClick.target.dataset. They are then interpolated inside of the template literal using clickedData.sport.
+
 4. Can you describe, in detail, the algorithm that is in the `main` module?
-   > Your answer here
+   > Your answer here //
+
+   In main.js we import the Pairing function from the Pairings.js module, the Celebrities function from the CelebrityList.js module, and the Kids function from the Kids.js module. Document.querySelector("#container") then selects the main container in index.html and stores its location in the variable mainContainer. ApplicationHTML is then decclared and it stores an html string and invokes the imported functions to generate the html strings for their sections. ApplicationHTML is then set to be the HTML inside the main container using mainContainer.innerHTML
