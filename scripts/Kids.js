@@ -15,10 +15,10 @@ export const Kids = () => {
 
 document.addEventListener(
     'click',
-    (onClick) => {
-        const clickedData = onClick.target.dataset
-        if (clickedData.type === 'child') {
-            window.alert(`${clickedData.name} wish is ${clickedData.wish}`)
+    (event) => {
+        const {name, type, wish} = event.target.dataset
+        if (type === 'child') {
+            window.alert(`${name} wish is ${wish}`)
         }
     }
 )

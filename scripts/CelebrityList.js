@@ -22,10 +22,11 @@ export const Celebrities = () => {
 
 document.addEventListener(
     'click',
-    (onClick) => {
-        const clickedData = onClick.target.dataset
-        if ( clickedData.type === 'celebrity') {
-            window.alert(`${clickedData.name} is a ${clickedData.sport.toLowerCase()} star.`)
+    (event) => {
+        const {name,type,sport} = event.target.dataset
+
+        if ( type === 'celebrity') { 
+            window.alert(`${name} is a ${sport.toLowerCase()} star.`)
         }
     }
 )
